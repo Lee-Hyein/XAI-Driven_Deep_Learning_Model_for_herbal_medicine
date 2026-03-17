@@ -58,26 +58,33 @@ The goal is to assist herbal medicine sensory evaluation specialists by offering
 
 ```bash
 pip install -r requirements.txt
+```
 
 ### Training & Evaluation
 **CNN (VGG16)**
+```
 Copypython CNN.py \
   --train_dir /path/to/train \
   --val_dir /path/to/val \
   --num_classes 3 \
   --batch_size 16 \
   --epochs 30
+```
 **Vision Transformer (ViT)**
+```
 Copypython ViT.py \
   --train_dir /path/to/train \
   --val_dir /path/to/val \
   --num_classes 3 \
   --batch_size 16 \
   --epochs 30
+```
 **TransFG (Fine-Grained Transformer)**
+```
 Copypython TransFG.py \
   --train_dir /path/to/train \
   --val_dir /path/to/val \
   --num_classes 3 \
   --batch_size 16 \
   --epochs 30
+```
