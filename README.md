@@ -1,68 +1,64 @@
 # XAI-Driven Deep Learning Model for Herbal Medicine
 
-한약재 분류를 위한 설명 가능한 딥러닝 모델 프로젝트입니다.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 프로젝트 개요
+> A comparative deep learning framework for classifying herbal medicine images, integrating Explainable AI (XAI) to support sensory evaluation experts in traditional medicine quality assessment.
 
-이 프로젝트는 한약재 이미지를 분류하기 위한 다양한 딥러닝 모델들을 구현하고 비교 분석합니다.
+---
 
-## 모델 구조
+## Overview
 
-### 1. CNN (VGG16)
-- 전통적인 Convolutional Neural Network
-- VGG16 아키텍처 기반
-- 3번 반복 실험을 통한 통계적 분석
+This project implements and benchmarks multiple deep learning architectures — **CNN (VGG16)**, **Vision Transformer (ViT)**, and **TransFG** — for herbal medicine image classification. Each model is evaluated with statistical rigor (3 repeated trials, standard deviation, confidence intervals) and paired with XAI visualization methods to provide interpretable predictions.
 
-### 2. ViT (Vision Transformer)
-- Transformer 기반 이미지 분류 모델
-- timm 라이브러리 활용
-- 어텐션 메커니즘 분석
+The goal is to assist herbal medicine sensory evaluation specialists by offering an AI-powered system that is both accurate and explainable.
 
-### 3. TransFG (Transformer with Fine-Grained)
-- Global + Local Branch 구조
-- Fine-grained 특징 추출
-- 패치 중요도 기반 분석
+---
 
-## 데이터셋
+## Model Architectures
 
-- 한약재 이미지 데이터셋
-- 증강된 데이터 포함
-- Train/Validation/Test 분할
+### 1. CNN — VGG16
+- Traditional Convolutional Neural Network based on the **VGG16** architecture
+- Fine-tuned on herbal medicine image dataset via transfer learning
+- 3 repeated experiments for statistical reliability
+- Grad-CAM visualization for class activation mapping
 
-## 사용법
+### 2. ViT — Vision Transformer
+- Transformer-based image classification model
+- Implemented using the [`timm`](https://github.com/huggingface/pytorch-image-models) library
+- Attention map visualization to identify discriminative image regions
+- Captures global context through multi-head self-attention
 
-### CNN 모델 실행
+### 3. TransFG — Transformer for Fine-Grained Recognition
+- Dual-branch architecture: **Global Branch** + **Local Branch**
+- Focuses on fine-grained feature extraction for visually similar herbal species
+- Patch importance-based attention analysis
+- Designed for high intra-class variance and inter-class similarity
+
+---
+
+## Dataset
+
+| Split       | Description                         |
+|-------------|-------------------------------------|
+| Train       | Augmented herbal medicine images    |
+| Validation  | In-distribution validation samples  |
+| Test        | Held-out evaluation set             |
+
+- Herbal medicine image dataset with multi-class labels
+- Data augmentation applied (rotation, flipping, color jitter, etc.)
+- Structured as standard `ImageFolder` format compatible with PyTorch
+
+> ⚠️ The dataset is not publicly released due to licensing restrictions.  
+> Contact the authors for dataset access inquiries.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
 ```bash
-python CNN.py --train_dir /path/to/train --val_dir /path/to/val --num_classes 3 --batch_size 16 --epochs 30
-```
+pip install -r requirements.txt
 
-### ViT 모델 실행
-```bash
-python ViT.py --train_dir /path/to/train --val_dir /path/to/val --num_classes 3 --batch_size 16 --epochs 30
-```
-
-### TransFG 모델 실행
-```bash
-python TransFG.py --train_dir /path/to/train --val_dir /path/to/val --num_classes 3 --batch_size 16 --epochs 30
-```
-
-## 결과
-
-- 표준편차 및 신뢰구간 포함한 Error Bar
-- CSV 파일로 결과 저장
-- 시각화 그래프 생성
-
-## 요구사항
-
-- Python 3.8+
-- PyTorch
-- torchvision
-- timm
-- matplotlib
-- pandas
-- numpy
-- tqdm
-
-## 라이선스
-
-MIT License
