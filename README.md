@@ -50,9 +50,6 @@ The goal is to assist herbal medicine sensory evaluation specialists by offering
 - Data augmentation applied (rotation, flipping, color jitter, etc.)
 - Structured as standard `ImageFolder` format compatible with PyTorch
 
-> ⚠️ The dataset is not publicly released due to licensing restrictions.  
-> Contact the authors for dataset access inquiries.
-
 ---
 
 ## 🚀 Getting Started
@@ -62,3 +59,25 @@ The goal is to assist herbal medicine sensory evaluation specialists by offering
 ```bash
 pip install -r requirements.txt
 
+### Training & Evaluation
+**CNN (VGG16)**
+Copypython CNN.py \
+  --train_dir /path/to/train \
+  --val_dir /path/to/val \
+  --num_classes 3 \
+  --batch_size 16 \
+  --epochs 30
+**Vision Transformer (ViT)**
+Copypython ViT.py \
+  --train_dir /path/to/train \
+  --val_dir /path/to/val \
+  --num_classes 3 \
+  --batch_size 16 \
+  --epochs 30
+**TransFG (Fine-Grained Transformer)**
+Copypython TransFG.py \
+  --train_dir /path/to/train \
+  --val_dir /path/to/val \
+  --num_classes 3 \
+  --batch_size 16 \
+  --epochs 30
