@@ -38,20 +38,6 @@ The goal is to assist herbal medicine sensory evaluation specialists by offering
 
 ---
 
-## Dataset
-
-| Split       | Description                         |
-|-------------|-------------------------------------|
-| Train       | Augmented herbal medicine images    |
-| Validation  | In-distribution validation samples  |
-| Test        | Held-out evaluation set             |
-
-- Herbal medicine image dataset with multi-class labels
-- Data augmentation applied (rotation, flipping, color jitter, etc.)
-- Structured as standard `ImageFolder` format compatible with PyTorch
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
