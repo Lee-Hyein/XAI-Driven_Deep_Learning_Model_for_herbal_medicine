@@ -10,7 +10,7 @@
 
 ## Overview
 
-This project implements and benchmarks multiple deep learning architectures — **CNN (VGG16)**, **Vision Transformer (ViT)**, and **TransFG** — for herbal medicine image classification. Each model is evaluated with statistical rigor (3 repeated trials, standard deviation, confidence intervals) and paired with XAI visualization methods to provide interpretable predictions.
+This project implements and benchmarks multiple deep learning architectures — **CNN (VGG16)**, **Vision Transformer (ViT)**, and **TransFG** — for herbal medicine image classification. Each model is evaluated with statistical rigor and paired with XAI visualization methods to provide interpretable predictions.
 
 The goal is to assist herbal medicine sensory evaluation specialists by offering an AI-powered system that is both accurate and explainable.
 
