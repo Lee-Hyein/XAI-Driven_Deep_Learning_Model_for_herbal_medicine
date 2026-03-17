@@ -63,7 +63,7 @@ pip install -r requirements.txt
 ### Training & Evaluation
 **CNN (VGG16)**
 ```
-Copypython CNN.py \
+python CNN.py \
   --train_dir /path/to/train \
   --val_dir /path/to/val \
   --num_classes 3 \
@@ -72,7 +72,7 @@ Copypython CNN.py \
 ```
 **Vision Transformer (ViT)**
 ```
-Copypython ViT.py \
+python ViT.py \
   --train_dir /path/to/train \
   --val_dir /path/to/val \
   --num_classes 3 \
@@ -81,7 +81,7 @@ Copypython ViT.py \
 ```
 **TransFG (Fine-Grained Transformer)**
 ```
-Copypython TransFG.py \
+python TransFG.py \
   --train_dir /path/to/train \
   --val_dir /path/to/val \
   --num_classes 3 \
